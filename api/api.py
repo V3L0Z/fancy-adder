@@ -1,8 +1,9 @@
-import time
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/time')
-def get_current_time():
-    return {'time': time.time()}
+@app.route('/add')
+def add_numbers():
+    x = request.args.get('x')
+    y = request.args.get('y')
+    return { 'add': int(x) + int(y) }
