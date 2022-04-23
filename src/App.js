@@ -6,7 +6,7 @@ function App() {
   const x = React.useRef();
   const y = React.useRef();
 
-  const handleFetch = () => fetch(`/add?x=${x?.current?.value}&y=${y?.current?.value}`).then(res => res.json()).then(data => {
+  const handleFetch = () => fetch(`https://fancy-adder.uc.r.appspot.com/?x=${x?.current?.value}&y=${y?.current?.value}`).then(res => res.json()).then(data => {
     setAdd(data.add)
   })
 
